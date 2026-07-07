@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Soccer Drone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0b1f3a;
+    color:white;
+}
+
+header{
+    background:#0099ff;
+    padding:20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:40px;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+.hero{
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(#0b1f3a,#1b5cff);
+}
+
+.hero h2{
+    font-size:55px;
+}
+
+.hero p{
+    font-size:22px;
+    margin:20px;
+}
+
+button{
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:50px;
+    background:#ffd400;
+    cursor:pointer;
+}
+
+button:hover{
+    background:white;
+}
+
+section{
+    padding:60px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    color:black;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.drone{
+    width:180px;
+    height:180px;
+    background:#00aeef;
+    border-radius:50%;
+    margin:auto;
+    animation:fly 3s infinite ease-in-out;
+}
+
+@keyframes fly{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0px);}
+}
+
+footer{
+    background:#0099ff;
+    padding:20px;
+    text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>⚽ Future Soccer Drone 🚁</h1>
+
+<nav>
+<a href="#">首頁</a>
+<a href="#">功能</a>
+<a href="#">展示</a>
+<a href="#">控制</a>
+<a href="#">聯絡</a>
+</nav>
+
+</header>
+
+<div class="hero">
+
+<div class="drone"></div>
+
+<h2>AI 足球無人機</h2>
+
+<p>智慧追蹤足球｜自動飛行｜即時直播</p>
+
+<button onclick="startDrone()">開始飛行</button>
+
+</div>
+
+<section>
+
+<h2 style="text-align:center;margin-bottom:40px;">
+主要功能
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⚽ 足球追蹤</h3>
+<p>AI 自動辨識足球位置。</p>
+</div>
+
+<div class="card">
+<h3>🚁 自主飛行</h3>
+<p>智慧導航，自動避障。</p>
+</div>
+
+<div class="card">
+<h3>📷 即時攝影</h3>
+<p>1080P 高畫質直播。</p>
+</div>
+
+<div class="card">
+<h3>📡 GPS 定位</h3>
+<p>精準飛行與返航。</p>
+</div>
+
+</div>
+
+</section>
+
+<section style="text-align:center;">
+
+<h2>控制中心</h2>
+
+<br>
+
+<button onclick="control('⬆ 前進')">⬆ 前進</button>
+
+<button onclick="control('⬇ 後退')">⬇ 後退</button>
+
+<button onclick="control('⬅ 左轉')">⬅ 左轉</button>
+
+<button onclick="control('➡ 右轉')">➡ 右轉</button>
+
+<button onclick="control('🛬 降落')">🛬 降落</button>
+
+<h2 id="status" style="margin-top:30px;">
+等待操作...
+</h2>
+
+</section>
+
+<footer>
+
+2026 Future Soccer Drone © All Rights Reserved
+
+</footer>
+
+<script>
+
+function startDrone(){
+
+alert("🚁 無人機起飛成功！");
+
+}
+
+function control(text){
+
+document.getElementById("status").innerHTML="目前狀態：" + text;
+
+}
+
+</script>
+
+</body>
+</html>
